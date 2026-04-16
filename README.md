@@ -73,24 +73,44 @@ Open `http://localhost:8501` in your browser.
 
 ```
 positive-diary/
-├── app.py              # Streamlit app (main logic)
-├── requirements.txt    # Python dependencies
-├── .env                # API key (gitignored)
-├── .env.example        # API key template
+├── app.py                  # Streamlit app (main logic)
+├── requirements.txt        # Python dependencies
+├── .env                    # API key (gitignored)
+├── .env.example            # API key template
+├── persona.example.md      # Persona template (copy to data/persona.md)
 ├── .gitignore
-└── README.md
+├── README.md
+└── data/
+    ├── .gitkeep
+    ├── diary.db            # SQLite database (gitignored)
+    └── persona.md          # Personal profile for context (gitignored)
 ```
 
 ---
 
 ## Roadmap / 今後の予定
 
-- [ ] **履歴保存** — 過去の変換をローカルに保存・一覧表示
+- [x] **履歴保存** — 過去の変換をローカルに保存・一覧表示
+- [x] **個人プロフィール反映** — persona.mdの人物像をシステムプロンプトに反映・自動更新
 - [ ] **感情スコア表示** — 変換前後のポジティブ度をスコアで可視化
 - [ ] **多言語対応** — 英語・中国語など他言語の入力にも対応
 - [ ] **モデル選択** — GPT-4o / GPT-4o-mini など使用モデルをUI上で切り替え
 - [ ] **Streamlit Cloud デプロイ** — ワンクリックで公開できるデプロイ手順を追加
 - [ ] **テストコード** — `pytest` による API モック・ユニットテストの整備
+
+---
+
+## Changelog / 変更履歴
+
+### v0.2.0 (2026-04-17)
+- SQLiteによる変換履歴の保存・一覧表示
+- persona.mdによる個人プロフィールの反映
+- persona.mdのやり取り後自動更新
+
+### v0.1.0 (2026-04-16)
+- 初回リリース
+- ネガティブ日記のポジティブ変換（OpenAI API）
+- 元の文と変換後の並列表示
 
 ---
 
